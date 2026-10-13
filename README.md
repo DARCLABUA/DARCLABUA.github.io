@@ -2,10 +2,17 @@
 
 Informational site for the **Darknet Analysis and Research on Cybercrime Lab (D.A.R.C. Lab)** at The University of Alabama, formerly the Dark Web Investigation Lab (DWIL).
 
-It's a single static page: no build step and no dependencies. Fonts load from Google Fonts.
+It's a plain static site: no build step and no dependencies. Every page shares `assets/site.css` and the same header menu. Fonts load from Google Fonts.
 
 ```
-index.html                     the whole site (HTML + CSS)
+index.html                     home: intro, links into the site, how to apply
+about.html                     mission, teams, this semester's goal, where we're headed
+security.html                  security stack and proof-of-concept reports
+people.html                    faculty sponsor and student leadership
+experience.html                how we work and opportunities beyond the lab
+join.html                      application link, QR code and what we look for
+404.html                       shown for broken links
+assets/site.css                shared styles for every page
 favicon.ico                    browser tab icon
 assets/darc-logo-animated.webp hero logo (plays its reveal animation once)
 assets/darc-logo.png           static logo (shown when reduced motion is on)
@@ -20,7 +27,7 @@ Replace the files in `assets/` (same names) to swap them out.
 
 ## Preview locally
 
-Open `index.html` in a browser.
+Open `index.html` in a browser and click through.
 
 ## Publish with GitHub Pages
 
@@ -31,5 +38,5 @@ Open `index.html` in a browser.
 
 ## Editing
 
-- **Application link:** search `index.html` for `forms.gle` (it appears three times, once as plain text). If the form changes, regenerate `assets/apply-qr.png` too.
+- **Application link:** it appears on `index.html` and `join.html` (search for `forms.gle`). If the form changes, regenerate `assets/apply-qr.png` too.
 - **Student leads:** intentionally not named on the site, since leads rotate.

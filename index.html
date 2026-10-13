@@ -13,198 +13,18 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..800&family=JetBrains+Mono:wght@400;500&display=swap">
-<style>
-html, body { margin: 0; }
-img { max-width: 100%; }
-/* Layout: a field report. Mono section tags in a left rail, content in the right column; hero pairs the lab's name with a Tor circuit diagram. Single dark look by choice. */
-:root {
-  --ink: #1c1c1d;
-  --panel: #252527;
-  --line: #38373b;
-  --fg: #ebe8e1;
-  --muted: #9ba2ae;
-  --crimson: #e04a62;
-  --crimson-deep: #96002a;
-  --display: "Archivo", "Helvetica Neue", Arial, sans-serif;
-  --body: "Archivo", "Helvetica Neue", Arial, sans-serif;
-  --mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
-  color-scheme: dark;
-}
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
-body {
-  background: var(--ink);
-  color: var(--fg);
-  font-family: var(--body);
-  font-size: 17px;
-  line-height: 1.6;
-  padding-inline: clamp(16px, 4vw, 40px);
-  padding-block: 0;
-}
-a { color: inherit; }
-a:focus-visible, button:focus-visible { outline: 2px solid var(--crimson); outline-offset: 3px; border-radius: 4px; }
-.wrap { max-width: 1140px; margin-inline: auto; }
-h1, h2, h3 { font-family: var(--display); margin: 0; text-wrap: balance; }
-p { margin: 0; }
-.tag { font-family: var(--mono); font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--crimson); }
-.muted { color: var(--muted); }
-
-/* Header */
-.top {
-  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5;
-  background: color-mix(in srgb, var(--ink) 88%, transparent);
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid var(--line);
-  margin-inline: calc(-1 * clamp(16px, 4vw, 40px));
-  padding: 14px clamp(16px, 4vw, 40px);
-}
-.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
-.mark { display: inline-flex; align-items: center; gap: 10px; font-family: var(--display); font-stretch: 125%; font-weight: 800; font-size: 20px; letter-spacing: .02em; text-decoration: none; }
-.mark span { color: var(--crimson); }
-.mark img { height: 34px; width: auto; }
-.hero-logo { width: clamp(150px, 20vw, 220px); height: auto; margin-bottom: 20px; }
-.nav { display: flex; gap: 20px; flex-wrap: wrap; font-family: var(--mono); font-size: 13px; }
-.nav a { text-decoration: none; color: var(--muted); }
-.nav a:hover { color: var(--fg); }
-.nav a.cta { color: var(--crimson); }
-
-/* Hero */
-.hero { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: clamp(32px, 6vw, 72px); align-items: center; padding-block: clamp(48px, 9vw, 104px) clamp(48px, 7vw, 80px); }
-.hero h1 { font-stretch: 112%; font-weight: 780; font-size: clamp(40px, 6.4vw, 76px); line-height: .98; letter-spacing: -.01em; margin-block: 18px 24px; }
-.hero h1 em { font-style: normal; color: var(--crimson); }
-.lede { font-size: clamp(18px, 2vw, 21px); line-height: 1.5; max-width: 34em; color: #d6d2ca; }
-.actions { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; margin-top: 32px; }
-.btn { display: inline-flex; align-items: center; gap: 10px; background: var(--crimson); color: #140306; font-weight: 650; text-decoration: none; padding: 13px 22px; border-radius: 999px; transition: transform .15s ease; }
-.btn:hover { transform: translateY(-1px); }
-.btn.ghost { background: transparent; color: var(--fg); border: 1px solid var(--line); }
-.formerly { margin-top: 28px; font-family: var(--mono); font-size: 13px; color: var(--muted); }
-
-.circuit { background: var(--panel); border: 1px solid var(--line); border-radius: 18px; padding: 22px 22px 18px; }
-.circuit svg { display: block; width: 100%; height: auto; max-width: 100%; }
-.circuit figcaption { font-size: 14px; line-height: 1.5; color: var(--muted); margin-top: 12px; }
-.travel { animation: travel 6s linear infinite; }
-@keyframes travel { from { transform: translateY(0); } to { transform: translateY(416px); } }
-@media (prefers-reduced-motion: reduce) { .travel { animation: none; } }
-
-/* Sections */
-.sec { display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 24px 48px; padding-block: clamp(48px, 7vw, 88px); border-top: 1px solid var(--line); }
-.sec > .tag { padding-top: 10px; }
-.sec h2 { font-stretch: 108%; font-weight: 720; font-size: clamp(30px, 4vw, 46px); line-height: 1.06; margin-bottom: 18px; }
-.sec .intro { max-width: 40em; color: #d6d2ca; font-size: 18px; }
-.grid { display: grid; gap: 18px; margin-top: 36px; }
-.g3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-.g2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-.g4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-.item { border-top: 2px solid var(--crimson); padding-top: 16px; }
-.item h3 { font-size: 20px; font-weight: 680; margin-bottom: 6px; }
-.item p { color: var(--muted); font-size: 16px; }
-
-.team { background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 28px; }
-.team h3 { font-size: 26px; font-weight: 720; }
-.team .lead { font-family: var(--mono); font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin: 6px 0 16px; }
-.team ul { margin: 0; padding-left: 20px; color: #d6d2ca; display: grid; gap: 6px; }
-.team li::marker { color: var(--crimson); }
-
-.sponsor { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 32px; align-items: start; margin-top: 36px; }
-.sponsor img, .person img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center top; border-radius: 14px; background: var(--panel); }
-.role { font-family: var(--mono); font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--crimson); margin-bottom: 6px; }
-.sponsor h3, .person h3 { font-size: 26px; font-weight: 720; margin-bottom: 10px; }
-.sponsor p + p { margin-top: 12px; }
-.facts { list-style: none; padding: 0; margin: 16px 0 0; display: grid; gap: 8px; font-size: 15px; color: var(--muted); }
-.facts li { padding-left: 18px; position: relative; }
-.facts li::before { content: ""; position: absolute; left: 0; top: .7em; width: 8px; height: 1px; background: var(--crimson); }
-.people { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; margin-top: 44px; }
-.person { display: grid; grid-template-columns: 140px minmax(0, 1fr); gap: 22px; align-items: start; }
-.person .from { font-size: 15px; color: var(--muted); margin-bottom: 4px; }
-
-.tool { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 22px; }
-.tool .tag { color: var(--muted); }
-.tool h3 { font-size: 21px; font-weight: 700; margin: 8px 0 6px; }
-.tool p { color: var(--muted); font-size: 15.5px; }
-
-.past { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 32px; margin-top: 36px; }
-.past ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; }
-.past li { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 16px 18px; }
-.past li b { display: block; font-weight: 650; margin-bottom: 2px; }
-.past li span { color: var(--muted); font-size: 15.5px; }
-
-.target { font-family: var(--display); font-stretch: 108%; font-weight: 650; font-size: clamp(24px, 3vw, 34px); line-height: 1.2; max-width: 26em; }
-.target em { font-style: normal; color: var(--crimson); }
-.ccap .letter { font-family: var(--display); font-stretch: 125%; font-weight: 800; font-size: 44px; line-height: 1; color: var(--crimson); }
-.ccap .word { font-weight: 650; margin-top: 6px; }
-.ccap > div { border: 1px solid var(--line); border-radius: 14px; padding: 18px 20px; }
-
-.join { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 40px; align-items: center; background: var(--crimson-deep); border-radius: 22px; padding: clamp(28px, 5vw, 56px); margin-block: clamp(48px, 7vw, 88px); }
-.join h2 { font-stretch: 118%; font-weight: 800; font-size: clamp(34px, 5vw, 60px); line-height: 1; margin-bottom: 16px; }
-.join p { color: #f6e3e6; max-width: 32em; }
-.join .btn { background: var(--fg); color: #2a0710; }
-.join .link { font-family: var(--mono); font-size: 14px; color: #f6e3e6; word-break: break-all; margin-top: 18px; }
-.qr { background: var(--fg); border-radius: 16px; padding: 16px; text-align: center; }
-.qr img { width: 180px; height: 180px; display: block; image-rendering: pixelated; }
-.qr span { display: block; font-family: var(--mono); font-size: 11px; letter-spacing: .14em; color: #2a0710; margin-top: 8px; }
-
-.stack { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; margin-top: 36px; }
-.stack article { background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 26px; display: flex; flex-direction: column; gap: 10px; }
-.stack .kind { font-family: var(--mono); font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--crimson); }
-.stack h3 { font-size: 26px; font-weight: 720; }
-.stack p { color: var(--muted); font-size: 16px; }
-.path { list-style: none; counter-reset: step; padding: 0; margin: 40px 0 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; border: 1px solid var(--line); border-radius: 16px; overflow: hidden; }
-.path li { counter-increment: step; padding: 22px 22px 24px; border-left: 1px solid var(--line); }
-.path li:first-child { border-left: none; }
-.path li::before { content: "0" counter(step); display: block; font-family: var(--mono); font-size: 13px; color: var(--crimson); margin-bottom: 10px; }
-.path b { display: block; font-size: 18px; font-weight: 680; margin-bottom: 4px; }
-.path span { color: var(--muted); font-size: 15px; }
-.path-label { font-family: var(--mono); font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-top: 44px; }
-.path-label + .path { margin-top: 14px; }
-@media (max-width: 900px) { .stack { grid-template-columns: minmax(0, 1fr); } .path { grid-template-columns: repeat(2, minmax(0, 1fr)); } .path li:nth-child(3) { border-left: none; } .path li:nth-child(n+3) { border-top: 1px solid var(--line); } }
-@media (max-width: 600px) { .path { grid-template-columns: minmax(0, 1fr); } .path li { border-left: none; } .path li + li { border-top: 1px solid var(--line); } }
-
-.poc { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: 36px; align-items: start; margin-top: 56px; padding-top: 44px; border-top: 1px dashed var(--line); }
-.poc h3 { font-size: clamp(24px, 2.6vw, 30px); font-weight: 720; line-height: 1.15; margin-bottom: 14px; }
-.poc .body { color: #d6d2ca; font-size: 17px; }
-.poc .body + .body { margin-top: 14px; }
-.report { background: var(--fg); color: #1c1c1d; border-radius: 6px 6px 16px 16px; padding: 26px 28px 28px; box-shadow: 0 18px 40px rgba(0,0,0,.35); border-top: 6px solid var(--crimson-deep); }
-.report .head { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; font-family: var(--mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: #6b6870; padding-bottom: 14px; border-bottom: 1px solid #d3cfc6; }
-.report .title { font-family: var(--display); font-weight: 720; font-size: 21px; margin: 16px 0 14px; color: #1c1c1d; }
-.report ol { list-style: none; counter-reset: sec; margin: 0; padding: 0; display: grid; gap: 12px; }
-.report li { counter-increment: sec; display: grid; grid-template-columns: 34px minmax(0, 1fr); }
-.report li::before { content: counter(sec) "."; font-family: var(--mono); font-size: 13px; color: var(--crimson-deep); padding-top: 3px; }
-.report li b { display: block; font-size: 16px; font-weight: 680; color: #1c1c1d; }
-.report li span { font-size: 14.5px; color: #55525a; line-height: 1.5; }
-@media (max-width: 900px) { .poc { grid-template-columns: minmax(0, 1fr); } }
-
-footer { border-top: 1px solid var(--line); padding-block: 28px 40px; display: flex; flex-wrap: wrap; gap: 12px 32px; justify-content: space-between; font-size: 14px; color: var(--muted); }
-
-@media (max-width: 900px) {
-  .hero { grid-template-columns: minmax(0, 1fr); }
-  .sec { grid-template-columns: minmax(0, 1fr); }
-  .g3, .g4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .people, .past { grid-template-columns: minmax(0, 1fr); }
-}
-@media (max-width: 600px) {
-  .g2, .g3 { grid-template-columns: minmax(0, 1fr); }
-  .sponsor { grid-template-columns: minmax(0, 1fr); }
-  .sponsor img { max-width: 220px; }
-  .person { grid-template-columns: 96px minmax(0, 1fr); }
-  .join { grid-template-columns: minmax(0, 1fr); }
-  .qr { justify-self: start; }
-  .nav { gap: 14px; }
-}
-</style>
-
+<link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
 <header class="top">
   <div class="wrap">
-    <a class="mark" href="#top"><img src="assets/emblem.png" alt="" width="153" height="285">D.A.R.C.<span>/</span>LAB</a>
-    <nav class="nav" aria-label="Sections">
-      <a href="#mission">Mission</a>
-      <a href="#teams">Teams</a>
-      <a href="#stack">Security stack</a>
-      <a href="#people">People</a>
-      <a href="#work">How we work</a>
-      <a class="cta" href="#join">Join</a>
+    <a class="mark" href="index.html"><img src="assets/emblem.png" alt="" width="153" height="285">D.A.R.C.<span>/</span>LAB</a>
+    <nav class="nav" aria-label="Site">
+      <a href="about.html">About</a>
+      <a href="security.html">Security stack</a>
+      <a href="people.html">People</a>
+      <a href="experience.html">Experience</a>
+      <a class="cta" href="join.html">Join</a>
     </nav>
   </div>
 </header>
@@ -220,8 +40,8 @@ footer { border-top: 1px solid var(--line); padding-block: 28px 40px; display: f
       <h1>Darknet Analysis and Research on <em>Cybercrime</em> Lab</h1>
       <p class="lede">An undergraduate research lab that studies the darknet and cybercrime, and gives students real-world IT and cybersecurity experience along the way.</p>
       <div class="actions">
-        <a class="btn" href="https://forms.gle/pyAEn3oDvScfG8r38" target="_blank" rel="noopener">Apply to join</a>
-        <a class="btn ghost" href="#mission">What we do</a>
+        <a class="btn" href="join.html">Apply to join</a>
+        <a class="btn ghost" href="about.html">What we do</a>
       </div>
       <p class="formerly">Formerly the Dark Web Investigation Lab (DWIL)</p>
     </div>
@@ -248,163 +68,20 @@ footer { border-top: 1px solid var(--line); padding-block: 28px 40px; display: f
     </figure>
   </section>
 
-  <section class="sec" id="mission">
-    <p class="tag">Mission</p>
+  <section class="sec" id="explore">
+    <p class="tag">Explore</p>
     <div>
-      <h2>Research and explore cyberspace while building the next generation of cyber talent</h2>
-      <p class="intro">We study how the darknet is used and how cybercrime works. Along the way, every member gets three things.</p>
-      <div class="grid g3">
-        <div class="item"><h3>Academic research</h3><p>Take part in real projects on the dark web, cybercrime and social experiences online.</p></div>
-        <div class="item"><h3>Real-world IT and cyber</h3><p>Hands-on work with network technology, IT tools, lab assessments, inventory and problem solving.</p></div>
-        <div class="item"><h3>Hands-on project support</h3><p>Build and run what active research projects need to get done.</p></div>
+      <h2>Inside the lab</h2>
+      <div class="explore">
+        <a href="about.html"><span class="tag">About</span><b>Mission and teams</b><span class="d">What we study, how the two teams work and where the lab is headed.</span><span class="go">Read more →</span></a>
+        <a href="security.html"><span class="tag">Security stack</span><b>Industry-standard tools</b><span class="d">How students implement and configure real security tools, backed by proof-of-concept reports.</span><span class="go">Read more →</span></a>
+        <a href="people.html"><span class="tag">People</span><b>Faculty-sponsored, student-run</b><span class="d">Our faculty sponsor and how student leads run the lab day to day.</span><span class="go">Read more →</span></a>
+        <a href="experience.html"><span class="tag">Experience</span><b>Life in the lab</b><span class="d">How we work like a professional team, and access you won't get in a classroom.</span><span class="go">Read more →</span></a>
       </div>
     </div>
   </section>
 
-  <section class="sec" id="teams">
-    <p class="tag">Teams</p>
-    <div>
-      <h2>Two teams, one lab</h2>
-      <p class="intro">Join the side that fits you. Researchers produce the work; Implementations makes sure they have what they need.</p>
-      <div class="grid g2">
-        <div class="team">
-          <h3>Project Researchers</h3>
-          <p class="lead">The research side</p>
-          <ul>
-            <li>Explore research topics and gather data</li>
-            <li>Author professional academic papers</li>
-            <li>Present findings and pursue publication</li>
-          </ul>
-        </div>
-        <div class="team">
-          <h3>Implementations</h3>
-          <p class="lead">The IT and cyber side</p>
-          <ul>
-            <li>Assess systems and remediate findings</li>
-            <li>Inventory equipment and build custom solutions</li>
-            <li>Give researchers the setup they need to work</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="sec" id="stack">
-    <p class="tag">Security stack</p>
-    <div>
-      <h2>Industry-standard tools, hands on</h2>
-      <p class="intro">Our Implementations team works with the same security tools that companies run in production. Students don't just read about them. They install them, configure them and keep them running.</p>
-      <div class="stack">
-        <article><p class="kind">SIEM and XDR</p><h3>Wazuh</h3><p>Deploy agents to endpoints, collect and correlate logs, write detection rules and triage the alerts that come in.</p></article>
-        <article><p class="kind">Vulnerability scanning</p><h3>Nessus</h3><p>Plan and run scans, read findings by severity and track each one through remediation.</p></article>
-        <article><p class="kind">Endpoint protection</p><h3>EDR and anti-malware</h3><p>Roll out protection to machines, set policies and investigate detections when something gets flagged.</p></article>
-      </div>
-      <p class="path-label">How students get there</p>
-      <ol class="path">
-        <li><b>Learn the tool</b><span>What it does, how it works and why organizations depend on it.</span></li>
-        <li><b>Build it in the lab</b><span>Stand it up from scratch in our own lab environment.</span></li>
-        <li><b>Configure and tune</b><span>Set policies, rules and exclusions so alerts mean something.</span></li>
-        <li><b>Run it for real</b><span>Work toward implementing and maintaining it on real systems.</span></li>
-      </ol>
-      <div class="poc">
-        <div>
-          <p class="tag" style="margin-bottom:12px">Proof of concept</p>
-          <h3>Every tool earns its place with a written report</h3>
-          <p class="body">Before a tool goes into our environment, students research it and write a proof-of-concept report. The research looks at how the tool works, what it does well and which workflow gets the most out of it for our use case.</p>
-          <p class="body">The report doubles as lab technical documentation. It details exactly how the tool fits into the environment, so anyone on the team can understand the setup, rebuild it or improve on it later.</p>
-        </div>
-        <div class="report" role="img" aria-label="Outline of a D.A.R.C. Lab proof-of-concept report: research and use case, environment fit, implementation steps, configuration and tuning, findings and recommendation.">
-          <div class="head"><span>D.A.R.C. Lab technical docs</span><span>PoC report</span></div>
-          <p class="title">What every report covers</p>
-          <ol>
-            <li><div><b>Research and use case</b><span>What the tool does, how it works and the workflow that best fits our use case.</span></div></li>
-            <li><div><b>Environment fit</b><span>Exactly where it sits in the lab: which systems it touches and what it connects to.</span></div></li>
-            <li><div><b>Implementation steps</b><span>A step-by-step install someone else can follow and repeat.</span></div></li>
-            <li><div><b>Configuration and tuning</b><span>The settings we chose and why.</span></div></li>
-            <li><div><b>Findings and recommendation</b><span>What worked, what didn't and whether to roll it out.</span></div></li>
-          </ol>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="sec" id="people">
-    <p class="tag">People</p>
-    <div>
-      <h2>Faculty-sponsored, student-run</h2>
-      <div class="sponsor">
-        <img src="assets/partin.png" alt="Portrait of Dr. Raymond Partin">
-        <div>
-          <p class="role">Faculty sponsor</p>
-          <h3>Dr. Raymond Partin</h3>
-          <p>Dr. Partin is a criminologist whose research focuses on the Dark Web, with a special interest in the criminological differences between Dark Web users and non-users. He leads the Network Intrusion Lab and is Co-PI of the NSF Scholarship for Service (SFS) program at The University of Alabama.</p>
-          <ul class="facts">
-            <li>Ph.D., International Crime and Justice, Florida International University, 2023</li>
-            <li>M.S. and B.S., Criminology and Criminal Justice, University of Cincinnati</li>
-            <li>Published in <i>Crime &amp; Delinquency</i>, the <i>Journal of Criminal Justice</i> and the <i>American Journal of Criminal Justice</i></li>
-          </ul>
-        </div>
-      </div>
-
-      <p class="intro" style="margin-top:40px">Day to day, each team is run by a student lead, so members learn from peers who have been in their seat.</p>
-    </div>
-  </section>
-
-  <section class="sec" id="work">
-    <p class="tag">How we work</p>
-    <div>
-      <h2>Run like a professional team</h2>
-      <p class="intro">Members use the same kinds of tools they will meet in an internship or a first job.</p>
-      <div class="grid g3">
-        <div class="tool"><p class="tag">Communicate</p><h3>Team chat</h3><p>All lab communication, with a channel for each team and shared folders for our work.</p></div>
-        <div class="tool"><p class="tag">Plan</p><h3>Task boards</h3><p>Work is tracked and assigned to people and teams, the way engineering teams run sprints.</p></div>
-        <div class="tool"><p class="tag">Track</p><h3>Time clock</h3><p>Members clock in and out, so every hour in the lab is logged.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="sec" id="beyond">
-    <p class="tag">Beyond the lab</p>
-    <div>
-      <h2>Access you won't get in a classroom</h2>
-      <div class="past">
-        <p class="intro">The University of Alabama Police Department hosted our members for a behind-the-scenes look at the back end of its operations center, to see what data looks like during a major campus event.</p>
-        <ul>
-          <li><b>Saw the data flow</b><span>How data is transmitted and observed during a mass event.</span></li>
-          <li><b>Shadowed threat detection</b><span>Real-time threat detection, right here on campus.</span></li>
-          <li><b>Built our network</b><span>Connections with UAPD and the REACT lab.</span></li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section class="sec" id="goals">
-    <p class="tag">This semester</p>
-    <div>
-      <p class="target">Our target: at least one academic research article finished and <em>on its way to publication.</em></p>
-      <p class="intro" style="margin-top:28px">We get there through CCAP, which is also what we look for in new members.</p>
-      <div class="grid g4 ccap">
-        <div><p class="letter">C</p><p class="word">Commitment</p></div>
-        <div><p class="letter">C</p><p class="word">Consistency</p></div>
-        <div><p class="letter">A</p><p class="word">Accountability</p></div>
-        <div><p class="letter">P</p><p class="word">Passion</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="sec" id="future">
-    <p class="tag">Where we're headed</p>
-    <div>
-      <h2>A cybercrime research collective for all of UA</h2>
-      <p class="intro">Our long-term vision is The University of Alabama Cyber Crime Research Collective (UACCRC): a service that gives faculty the resources to run their own research.</p>
-      <div class="grid g2">
-        <div class="item"><h3>For faculty</h3><p>The people, computers and hardware professors need to power their own research.</p></div>
-        <div class="item"><h3>For undergraduates</h3><p>Work on many angles of cybercrime research, plus real-world IT and cyber experience.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="join" id="join">
+  <section class="join" id="apply">
     <div>
       <h2>Join the D.A.R.C. Lab</h2>
       <p>Interested in research, hands-on IT and cyber work, or both? Fill out the application and we'll be in touch.</p>
@@ -418,8 +95,10 @@ footer { border-top: 1px solid var(--line); padding-block: 28px 40px; display: f
   </section>
 
   <footer>
-    <span>Darknet Analysis and Research on Cybercrime Lab · The University of Alabama</span>
-    <span>Formerly the Dark Web Investigation Lab (DWIL)</span>
+    <span>Darknet Analysis and Research on Cybercrime Lab · The University of Alabama<br>Formerly the Dark Web Investigation Lab (DWIL)</span>
+    <nav aria-label="Footer">
+      <a href="index.html">Home</a><a href="about.html">About</a><a href="security.html">Security stack</a><a href="people.html">People</a><a href="experience.html">Experience</a><a href="join.html">Join</a>
+    </nav>
   </footer>
 </main>
 </body>
