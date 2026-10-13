@@ -13,7 +13,7 @@ experience.html                how we work and opportunities beyond the lab
 join.html                      application link, QR code and what we look for
 404.html                       shown for broken links
 assets/site.css                shared styles for every page
-assets/site.js                 title "decrypt" effect (skipped when reduced motion is on)
+assets/site.js                 "decrypt" effect on page text; timing settings at the top
 favicon.ico                    browser tab icon
 assets/darc-logo-animated.webp hero logo (plays its reveal animation once)
 assets/darc-logo.png           static logo (shown when reduced motion is on)
