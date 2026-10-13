@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Anti-virus: Software on each computer that detects, blocks and removes malicious code.">
+<title>Anti-virus · D.A.R.C. Lab</title>
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/icon-180.png">
+<meta property="og:image" content="assets/icon-512.png">
+<meta name="theme-color" content="#1c1c1d">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..800&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="assets/site.css">
+<script src="assets/site.js" defer></script>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="mark" href="index.html"><img src="assets/emblem.png" alt="" width="153" height="285">D.A.R.C.<span>/</span>LAB</a>
+    <nav class="nav" aria-label="Site">
+      <a href="about.html">About</a>
+      <a href="security.html" aria-current="page">Security stack</a>
+      <a href="people.html">People</a>
+      <a href="experience.html">Experience</a>
+      <a class="cta" href="join.html">Join</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap" id="top">
+  <section class="page-head">
+    <p class="prompt" aria-hidden="true"><span class="u">darc@ua</span>:<span class="p">~</span>$ <span class="c">cd ./security/anti-virus</span><span class="cursor"></span></p>
+    <p class="crumbs"><a href="security.html">Security stack</a> <span aria-hidden="true">/</span> Anti-virus</p>
+    <h1 data-scramble>Anti-virus</h1>
+    <p class="lead">Software on each computer that detects, blocks and removes malicious code.</p>
+  </section>
+
+  <section class="sec" style="border-top:none;padding-top:0">
+    <p class="tag">What it is</p>
+    <div class="what">
+      <p class="intro">Endpoints, meaning the laptops, desktops and servers people actually use, are where most attacks land: a phishing attachment, a malicious download, an infected USB drive.</p>
+      <p class="intro">Traditional anti-virus compares files against signatures of known malware. Modern endpoint protection adds behavioral detection that flags suspicious actions, like a document trying to launch a command shell. Endpoint detection and response (EDR) goes further, recording activity on each machine so analysts can investigate and isolate a compromised host remotely.</p>
+    </div>
+  </section>
+
+  <section class="sec">
+    <p class="tag">How it works</p>
+    <div>
+      <ol class="flow">
+        <li><b>Deploy</b><span>Install an agent on every endpoint and confirm each one reports in.</span></li>
+        <li><b>Set policy</b><span>Configure real-time protection, scan schedules and any exclusions.</span></li>
+        <li><b>Detect</b><span>Catch threats by signature, by behavior or by both.</span></li>
+        <li><b>Respond</b><span>Quarantine the file, kill the process or isolate the machine from the network.</span></li>
+        <li><b>Review</b><span>Investigate what happened and tune policies to reduce noise.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="sec">
+    <p class="tag">In practice</p>
+    <div>
+      <h2>What it looks like in a real environment</h2>
+      <p class="intro">Typical scenarios from organizations across the industry.</p>
+      <div class="stack examples">
+        <article class="ex"><p class="kind">Example</p><h3>A malicious invoice</h3><p>An employee opens an emailed invoice that tries to download ransomware. Real-time protection blocks the download and quarantines the attachment before anything runs.</p></article>
+        <article class="ex"><p class="kind">Example</p><h3>Stopping ransomware mid-attack</h3><p>EDR notices one workstation rapidly rewriting hundreds of files. An analyst isolates it from the network with one click, containing the damage while they investigate.</p></article>
+        <article class="ex"><p class="kind">Example</p><h3>Tuning out the noise</h3><p>A development team&#x27;s build folder keeps triggering false alarms. IT adds a narrow, documented exclusion instead of turning protection off.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <p class="tag">Toolbox</p>
+    <div class="toolbox">
+      <div>
+        <h3 class="sub">Common tools in the industry</h3>
+        <ul class="chips">
+        <li>Microsoft Defender for Endpoint</li>
+        <li>CrowdStrike Falcon</li>
+        <li>SentinelOne</li>
+        <li>Sophos Intercept X</li>
+        </ul>
+        <p class="note">Examples of widely used options, not an endorsement, and not necessarily what our lab runs.</p>
+      </div>
+      <div>
+        <h3 class="sub">Key terms</h3>
+        <dl class="terms">
+        <div><dt>Signature</dt><dd>A fingerprint of known malware used to recognize it.</dd></div>
+        <div><dt>Behavioral detection</dt><dd>Flagging software by what it does rather than what it looks like.</dd></div>
+        <div><dt>EDR</dt><dd>Endpoint detection and response: recording endpoint activity to detect, investigate and contain threats.</dd></div>
+        <div><dt>Quarantine</dt><dd>Moving a suspicious file somewhere it can&#x27;t run.</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <nav class="pager" aria-label="Other capabilities">
+    <a href="logging-and-monitoring.html"><span>← Previous</span><b>Logging and monitoring</b></a>
+    <a class="next" href="patch-management.html"><span>Next →</span><b>Patch management</b></a>
+  </nav>
+
+  <section class="cta-strip">
+    <p>Want to work on this hands-on?</p>
+    <a class="btn" href="join.html">Join the lab</a>
+  </section>
+
+  <footer>
+    <span>Darknet Analysis and Research on Cybercrime Lab · The University of Alabama<br>Formerly the Dark Web Investigation Lab (DWIL)</span>
+    <nav aria-label="Footer">
+      <a href="index.html">Home</a><a href="about.html">About</a><a href="security.html">Security stack</a><a href="people.html">People</a><a href="experience.html">Experience</a><a href="join.html">Join</a>
+    </nav>
+  </footer>
+</main>
+</body>
+</html>

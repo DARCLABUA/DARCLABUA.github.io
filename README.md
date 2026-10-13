@@ -8,6 +8,10 @@ It's a plain static site: no build step and no dependencies. Every page shares `
 index.html                     home: intro, links into the site, how to apply
 about.html                     mission, teams, this semester's goal, where we're headed
 security.html                  security stack and proof-of-concept reports
+vulnerability-management.html, logging-and-monitoring.html, anti-virus.html,
+patch-management.html, password-and-account-management.html,
+digital-forensics-and-data-recovery.html
+                               one explainer page per capability card
 people.html                    faculty sponsor and student leadership
 experience.html                how we work and opportunities beyond the lab
 join.html                      application link, QR code and what we look for

@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Digital forensics and data recovery: Preserving, examining and recovering digital evidence and lost data.">
+<title>Digital forensics and data recovery · D.A.R.C. Lab</title>
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/icon-180.png">
+<meta property="og:image" content="assets/icon-512.png">
+<meta name="theme-color" content="#1c1c1d">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..800&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="assets/site.css">
+<script src="assets/site.js" defer></script>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="mark" href="index.html"><img src="assets/emblem.png" alt="" width="153" height="285">D.A.R.C.<span>/</span>LAB</a>
+    <nav class="nav" aria-label="Site">
+      <a href="about.html">About</a>
+      <a href="security.html" aria-current="page">Security stack</a>
+      <a href="people.html">People</a>
+      <a href="experience.html">Experience</a>
+      <a class="cta" href="join.html">Join</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap" id="top">
+  <section class="page-head">
+    <p class="prompt" aria-hidden="true"><span class="u">darc@ua</span>:<span class="p">~</span>$ <span class="c">cd ./security/digital-forensics-and-data-recovery</span><span class="cursor"></span></p>
+    <p class="crumbs"><a href="security.html">Security stack</a> <span aria-hidden="true">/</span> Digital forensics and data recovery</p>
+    <h1 data-scramble>Digital forensics and data recovery</h1>
+    <p class="lead">Preserving, examining and recovering digital evidence and lost data.</p>
+  </section>
+
+  <section class="sec" style="border-top:none;padding-top:0">
+    <p class="tag">What it is</p>
+    <div class="what">
+      <p class="intro">When an incident happens or data goes missing, someone has to work out what happened and get the data back without destroying evidence along the way.</p>
+      <p class="intro">Digital forensics follows careful procedures: make an exact copy of the drive, verify the copy with a hash, work only on the copy and document every step in a chain of custody so the findings hold up. Data recovery uses many of the same tools to bring back deleted or corrupted files.</p>
+    </div>
+  </section>
+
+  <section class="sec">
+    <p class="tag">The process</p>
+    <div>
+      <ol class="flow">
+        <li><b>Identify</b><span>Determine which devices and data are relevant.</span></li>
+        <li><b>Preserve</b><span>Create a forensic image using a write blocker and record its hash.</span></li>
+        <li><b>Analyze</b><span>Build timelines, recover deleted files and examine system artifacts.</span></li>
+        <li><b>Document</b><span>Record every action and keep the chain of custody intact.</span></li>
+        <li><b>Report</b><span>Explain findings clearly, or hand back the recovered data.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="sec">
+    <p class="tag">In practice</p>
+    <div>
+      <h2>What it looks like in a real environment</h2>
+      <p class="intro">Typical scenarios from organizations across the industry.</p>
+      <div class="stack examples">
+        <article class="ex"><p class="kind">Example</p><h3>A suspected data theft</h3><p>An investigator images an employee&#x27;s laptop through a write blocker, then finds records of a USB drive being connected and files deleted shortly afterward.</p></article>
+        <article class="ex"><p class="kind">Example</p><h3>A failing hard drive</h3><p>A researcher&#x27;s drive starts failing. Recovery tools copy everything readable to a healthy disk first, then pull the lost files back from that copy.</p></article>
+        <article class="ex"><p class="kind">Example</p><h3>Malware that hides in memory</h3><p>During incident response, a memory capture from a compromised server reveals malicious code that was never written to disk.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <p class="tag">Toolbox</p>
+    <div class="toolbox">
+      <div>
+        <h3 class="sub">Common tools in the industry</h3>
+        <ul class="chips">
+        <li>Autopsy / The Sleuth Kit</li>
+        <li>FTK Imager</li>
+        <li>EnCase</li>
+        <li>Volatility</li>
+        <li>PhotoRec</li>
+        </ul>
+        <p class="note">Examples of widely used options, not an endorsement, and not necessarily what our lab runs.</p>
+      </div>
+      <div>
+        <h3 class="sub">Key terms</h3>
+        <dl class="terms">
+        <div><dt>Forensic image</dt><dd>A bit-for-bit copy of a storage device.</dd></div>
+        <div><dt>Write blocker</dt><dd>Hardware or software that prevents any change to the original evidence.</dd></div>
+        <div><dt>Hash</dt><dd>A fingerprint of data used to prove a copy is identical to the original.</dd></div>
+        <div><dt>Chain of custody</dt><dd>The documented record of who handled evidence and when.</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <nav class="pager" aria-label="Other capabilities">
+    <a href="password-and-account-management.html"><span>← Previous</span><b>Password and account management</b></a>
+    <a class="next" href="security.html"><span>Back to →</span><b>Security stack</b></a>
+  </nav>
+
+  <section class="cta-strip">
+    <p>Want to work on this hands-on?</p>
+    <a class="btn" href="join.html">Join the lab</a>
+  </section>
+
+  <footer>
+    <span>Darknet Analysis and Research on Cybercrime Lab · The University of Alabama<br>Formerly the Dark Web Investigation Lab (DWIL)</span>
+    <nav aria-label="Footer">
+      <a href="index.html">Home</a><a href="about.html">About</a><a href="security.html">Security stack</a><a href="people.html">People</a><a href="experience.html">Experience</a><a href="join.html">Join</a>
+    </nav>
+  </footer>
+</main>
+</body>
+</html>
