@@ -14,6 +14,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..800&family=JetBrains+Mono:wght@400;500&display=swap">
 <link rel="stylesheet" href="assets/site.css">
+<script src="assets/site.js" defer></script>
 </head>
 <body>
 <header class="top">
@@ -37,7 +38,7 @@
         <img class="hero-logo" src="assets/darc-logo-animated.webp" alt="D.A.R.C. Lab logo: Darknet Analysis and Research on Cybercrime" width="293" height="300">
       </picture>
       <p class="tag">The University of Alabama</p>
-      <h1>Darknet Analysis and Research on <em>Cybercrime</em> Lab</h1>
+      <h1 data-scramble>Darknet Analysis and Research on <em>Cybercrime</em> Lab</h1>
       <p class="lede">An undergraduate research lab that studies the darknet and cybercrime, and gives students real-world IT and cybersecurity experience along the way.</p>
       <div class="actions">
         <a class="btn" href="join.html">Apply to join</a>
@@ -47,6 +48,7 @@
     </div>
 
     <figure class="circuit" style="margin:0">
+      <div class="term-bar" aria-hidden="true"><i></i><i></i><i></i><span>tor_circuit — 3 hops</span></div>
       <svg viewBox="0 0 420 500" role="img" aria-label="Diagram of a Tor circuit: traffic leaves your computer wrapped in three layers of encryption, and the guard, middle and exit relays each remove one layer before it reaches the destination.">
         <line x1="120" y1="40" x2="120" y2="456" stroke="#38373b" stroke-width="2" stroke-dasharray="4 6"/>
         <circle class="travel" cx="120" cy="40" r="5" fill="#e04a62"/>
