@@ -283,3 +283,18 @@ footer { font-family: var(--mono); font-size: 12.5px; letter-spacing: .02em; }
   .mark::after, .cursor { animation: none; }
   .btn, .team, .tool, .stack article, .explore a { transition: none; }
 }
+
+/* ==== Capability roadmap ==== */
+:root { --ok: #5fbf8f; --wip: #e3a646; }
+.progress { display: flex; align-items: center; gap: 16px; margin-top: 28px; max-width: 520px; }
+.progress .bar { flex: 1; height: 8px; background: var(--panel); border: 1px solid var(--line); border-radius: 2px; overflow: hidden; }
+.progress .bar span { display: block; height: 100%; background: repeating-linear-gradient(90deg, var(--ok) 0 10px, #4aa679 10px 12px); }
+.progress p { font-family: var(--mono); font-size: 13px; color: var(--muted); white-space: nowrap; }
+.progress b { color: var(--fg); font-weight: 500; }
+.caps { margin-top: 24px; }
+.caps .status { font-family: var(--mono); font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--wip); display: inline-flex; align-items: center; gap: 8px; align-self: flex-start; border: 1px solid currentColor; border-radius: 3px; padding: 3px 8px; }
+.caps .status::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: currentColor; animation: blink 1.6s steps(1) infinite; }
+.caps .done .status { color: var(--ok); }
+.caps .done .status::before { animation: none; }
+.caps h3 { font-size: 23px; line-height: 1.2; }
+@media (prefers-reduced-motion: reduce) { .caps .status::before { animation: none; } }
