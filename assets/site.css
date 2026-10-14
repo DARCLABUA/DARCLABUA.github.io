@@ -354,3 +354,13 @@ footer { font-family: var(--mono); font-size: 12.5px; letter-spacing: .02em; }
 .contact-list a { color: var(--fg); text-decoration-color: var(--crimson); text-underline-offset: 4px; }
 .contact-list a:hover { color: var(--crimson); }
 @media (max-width: 600px) { .contact { grid-template-columns: minmax(0, 1fr); } .contact img { max-width: 140px; } .contact-list div { grid-template-columns: minmax(0, 1fr); gap: 2px; } }
+
+/* ==== Team pages ==== */
+.flow4 { grid-template-columns: repeat(4, minmax(0, 1fr)); margin-top: 28px; }
+.team-link { display: flex; flex-direction: column; cursor: pointer; }
+.team-link h3 a { text-decoration: none; color: inherit; }
+.team-link h3 a::after { content: ""; position: absolute; inset: 0; z-index: 1; }
+.team-link h3 a:focus-visible { outline: none; }
+.team-link:focus-within { outline: 2px solid var(--crimson); outline-offset: 3px; }
+.team-link .go { font-family: var(--mono); font-size: 13px; color: var(--crimson); margin-top: auto; padding-top: 16px; }
+.team-link:hover .go { text-decoration: underline; text-underline-offset: 4px; }

@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="The D.A.R.C. Lab Implementations team: hands-on IT and cybersecurity work with industry-standard tools.">
+<title>Implementations · D.A.R.C. Lab</title>
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/icon-180.png">
+<meta property="og:image" content="assets/icon-512.png">
+<meta name="theme-color" content="#1c1c1d">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..800&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="assets/site.css?v=4">
+<script src="assets/site.js?v=4" defer></script>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="mark" href="index.html"><img src="assets/emblem.png" alt="" width="153" height="285">D.A.R.C.<span>/</span>LAB</a>
+    <nav class="nav" aria-label="Site">
+      <a href="about.html">About</a>
+      <a href="implementations.html" aria-current="page">Implementations</a>
+      <a href="research.html">Research</a>
+      <a href="people.html">People</a>
+      <a href="experience.html">Experience</a>
+      <a class="cta" href="join.html">Join</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap" id="top">
+  <section class="page-head">
+    <p class="prompt" aria-hidden="true"><span class="u">darc@ua</span>:<span class="p">~</span>$ <span class="c">cd ./implementations</span><span class="cursor"></span></p>
+    <h1 data-scramble>Implementations team</h1>
+    <p class="lead">The IT and cybersecurity side of the lab. We build, secure and run the environment our research depends on, using the same kinds of tools companies run in production.</p>
+  </section>
+
+  <section class="sec" style="border-top:none;padding-top:0" id="what">
+    <p class="tag">What we do</p>
+    <div>
+      <div class="grid g3">
+        <div class="item"><h3>Assess and remediate</h3><p>Evaluate lab systems, find what's weak or misconfigured and fix it.</p></div>
+        <div class="item"><h3>Inventory and build</h3><p>Track every piece of equipment and build custom solutions for the problems we run into.</p></div>
+        <div class="item"><h3>Enable research</h3><p>Give the Project Researchers the systems, access and setup they need to do their work.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="stack">
+    <p class="tag">Security stack</p>
+    <div>
+      <h2>Six core security capabilities</h2>
+      <p class="intro">We build and run six core security capabilities for the lab. Students don't just read about these tools. They research them, install them, configure them and keep them running. Select one to learn what it involves.</p>
+      <div class="stack caps">
+        <article class="cap"><h3><a href="vulnerability-management.html">Vulnerability management</a></h3><p>The ongoing process of finding, prioritizing and fixing security weaknesses before attackers can use them.</p><p class="go" aria-hidden="true">Learn more →</p></article>
+        <article class="cap"><h3><a href="logging-and-monitoring.html">Logging and monitoring</a></h3><p>Collecting the records systems produce and watching them for signs of trouble.</p><p class="go" aria-hidden="true">Learn more →</p></article>
+        <article class="cap"><h3><a href="anti-virus.html">Anti-virus</a></h3><p>Software on each computer that detects, blocks and removes malicious code.</p><p class="go" aria-hidden="true">Learn more →</p></article>
+        <article class="cap"><h3><a href="patch-management.html">Patch management</a></h3><p>Keeping operating systems and software up to date in a controlled, tested way.</p><p class="go" aria-hidden="true">Learn more →</p></article>
+        <article class="cap"><h3><a href="password-and-account-management.html">Password and account management</a></h3><p>Controlling who has access to what, and keeping credentials strong and safe.</p><p class="go" aria-hidden="true">Learn more →</p></article>
+        <article class="cap"><h3><a href="digital-forensics-and-data-recovery.html">Digital forensics and data recovery</a></h3><p>Preserving, examining and recovering digital evidence and lost data.</p><p class="go" aria-hidden="true">Learn more →</p></article>
+      </div>
+      <p class="path-label">How students get there</p>
+      <ol class="path">
+        <li><b>Learn the tool</b><span>What it does, how it works and why organizations depend on it.</span></li>
+        <li><b>Build it in the lab</b><span>Stand it up from scratch in our own lab environment.</span></li>
+        <li><b>Configure and tune</b><span>Set policies, rules and exclusions so alerts mean something.</span></li>
+        <li><b>Run it for real</b><span>Work toward implementing and maintaining it on real systems.</span></li>
+      </ol>
+      <div class="poc">
+        <div>
+          <p class="tag" style="margin-bottom:12px">Proof of concept</p>
+          <h3>Every tool earns its place with a written report</h3>
+          <p class="body">Before a tool goes into our environment, students research it and write a proof-of-concept report. The research looks at how the tool works, what it does well and which workflow gets the most out of it for our use case.</p>
+          <p class="body">The report doubles as lab technical documentation. It details exactly how the tool fits into the environment, so anyone on the team can understand the setup, rebuild it or improve on it later.</p>
+        </div>
+        <div class="report" role="img" aria-label="Outline of a D.A.R.C. Lab proof-of-concept report: research and use case, environment fit, implementation steps, configuration and tuning, findings and recommendation.">
+          <div class="head"><span>D.A.R.C. Lab technical docs</span><span>PoC report</span></div>
+          <p class="title">What every report covers</p>
+          <ol>
+            <li><div><b>Research and use case</b><span>What the tool does, how it works and the workflow that best fits our use case.</span></div></li>
+            <li><div><b>Environment fit</b><span>Exactly where it sits in the lab: which systems it touches and what it connects to.</span></div></li>
+            <li><div><b>Implementation steps</b><span>A step-by-step install someone else can follow and repeat.</span></div></li>
+            <li><div><b>Configuration and tuning</b><span>The settings we chose and why.</span></div></li>
+            <li><div><b>Findings and recommendation</b><span>What worked, what didn't and whether to roll it out.</span></div></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-strip">
+    <p>Interested in research, hands-on IT and cyber work, or both?</p>
+    <a class="btn" href="join.html">Join the lab</a>
+  </section>
+
+  <footer>
+    <span>Darknet Analysis and Research on Cybercrime Lab · The University of Alabama<br>Formerly the Dark Web Investigation Lab (DWIL)</span>
+    <nav aria-label="Footer">
+      <a href="index.html">Home</a><a href="about.html">About</a><a href="implementations.html">Implementations</a><a href="research.html">Research</a><a href="people.html">People</a><a href="experience.html">Experience</a><a href="join.html">Join</a>
+    </nav>
+  </footer>
+</main>
+</body>
+</html>

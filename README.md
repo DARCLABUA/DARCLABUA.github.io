@@ -6,12 +6,14 @@ It's a plain static site: no build step and no dependencies. Every page shares `
 
 ```
 index.html                     home: intro, links into the site, how to apply
-about.html                     mission, teams, this semester's goal, where we're headed
-security.html                  security stack and proof-of-concept reports
+about.html                     mission, the two teams, where we're headed
+implementations.html           Implementations team: what we do, security stack, proof-of-concept reports
+research.html                  Project Researchers: research areas, process, this semester's target
+security.html                  old address; forwards to implementations.html
 vulnerability-management.html, logging-and-monitoring.html, anti-virus.html,
 patch-management.html, password-and-account-management.html,
 digital-forensics-and-data-recovery.html
-                               one explainer page per capability card
+                               one explainer page per capability card (linked from Implementations)
 people.html                    faculty sponsor and student leadership
 experience.html                how we work and opportunities beyond the lab
 join.html                      application link, QR code and what we look for
